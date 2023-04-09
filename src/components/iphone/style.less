@@ -1,16 +1,102 @@
 @import '~style/helpers';
-
-.container { 
+.outerContainer{
+	background-color: #daf0f5; /* fallback color */
+	background-image: linear-gradient(to bottom, #daf0f5, #7398a0 50%);
 	display: flex;
 	flex-direction: column;
-	background-image: url('../../assets/backgrounds/clear-iphone.jpg');
-	color: #fff;
+	/* background-image: url('../../assets/backgrounds/clear-iphone.jpg'); */
+	
+	//align-items: center; /* center vertically */
+	/*justify-content: center; /* center horizontally */
+
+	color: #000000;
 	width: 414px;
 	height: 736px;
+	//overflow-y: auto;
 	text-align: center;
-	padding-top: 80px;
+	padding-top: 40px; // was 80
 	margin: 0 auto;
+	font-family: Helvetica;
+	//overflow-y: 'scroll';
+	padding: 0;
 }
+.outerContainer::after{
+	background-color: #daf0f5; /* fallback color */
+	background-image: linear-gradient(to bottom, #daf0f5, #7398a0 50%);
+	width: 414px;
+	
+}
+.container { 
+	margin-top: 2%;
+	// height: 730px;
+	
+}
+.fourIcons{
+	background-color: #daf0f5;
+	padding: 2%;
+}
+.favIcon{
+	max-width: 10%;
+	height: auto;
+}
+.hidden{
+	display: none;
+}
+// RESORT NAME + ICON---------------------------------------------------------
+.iconName{
+	display: flex;
+	//align-items: center; /* center vertically */
+	justify-content: center; /* center horizontally */
+	background-color: none;
+	//font-size: 1.5em; MOT SURE WHY IMCREASING SIZE CREATES SPACE BETWEEN IT AND THE NAV BAR
+	padding-top: 0;
+	margin-top: 0;
+}
+// IMAGES-----------------------------------------------------------------------
+#vailImage {
+	max-width: 10%;
+	height: auto;
+	margin-right: 0.5rem; /* adjust spacing between image and text */
+}
+#bellImage {
+	//max-width: 20%;
+	//height: auto;
+	max-height: 0.8em;
+	max-width: auto;
+	padding: 0;
+	margin: 0;
+}
+#sunImage{
+	max-width: 35%;
+	height: auto;
+	margin-top: 2%;
+	margin: 0;
+}
+#tempImage{
+	//max-width: 10%;
+	width: 1.5em;
+	height: auto;
+}
+.location{
+	display: block;
+	clear: both;
+}
+div.fourIcons img{
+	padding-top: 4px;
+	//padding-bottom: 2px;
+	max-height: 3em;
+	width: auto;
+	margin-right: 0.5rem; /* adjust spacing between image and text */
+	padding-left: 1em;
+}
+
+#Star, #Search, #Gear{
+	max-width: 15%;
+	height: auto;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+// ???----------------------------------------------------------------------
 .header {
 	display: flex;
 	flex-direction: column;
@@ -36,7 +122,7 @@
 	letter-spacing: -12px;
 }
 .filled:after {
-	content: "°";
+	content: "Â°";
 	margin: 0 0 0 1rem;
 	font-size: 0.5em;
 	font-weight: 100;
@@ -44,3 +130,239 @@
 	padding-top: 10px;
 	vertical-align: top;
 }
+
+// DEAL WITH THIS-------------------------------------------------
+.temporary{
+	font-size: 2em;
+}
+
+// NAVIGATION BARS | FOUR ICONS | FOOTER-------------------------------
+.navBar ul, .fourIcons ul, .footer ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #daf0f5;
+	font-weight: bold;
+	// padding: 2%;
+	cursor: pointer;
+}
+
+.navBar li, .fourIcons li, .footer li{
+	float: left;
+	padding: 1%;
+	
+}
+.navBar ul li:hover{
+	border-bottom: 5px solid #27425d;
+	background-color: #8297b5;
+}
+.active{
+	border-bottom: 5px solid #27425d;
+}
+a.Nav_Links:link, a.Nav_Links:visited, a.Nav_LinksBottom:link, a.Nav_LinksBottom:visited {
+	display: block;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	padding: 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+
+
+// FOUR SECTIONS AREA-----------------------------
+.Row1_Column1{
+	display: flex;
+}
+.Row2_Column1{
+	display: flex;
+}
+.Row1_Column2{
+	display: flex;
+}
+.Row2_Column2{
+	display: flex;
+}
+.fourIcons{
+	margin-bottom: 13px;
+}
+div.fourIcons p{
+	font-size: 1.5em;
+	margin: 0;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+#gust{
+	float: left;
+	font-size: 1em;
+}
+// SCROLLING MENU --------------------------------------
+div.scrollmenu, div.scrollmenu2{
+	background-color: #daf0f5;
+	//overflow: auto;
+	white-space: nowrap;
+	//overflow-x: hidden; /* Hide horizontal scrollbar */
+	overflow-x: scroll;
+    //overflow-y: hidden;
+	//max-height: 4.5em;
+	//margin-bottom: 13px;
+}
+div.scrollmenu{
+	margin-bottom: 13px;
+}
+div.scrollmenu a, div.scrollmenu2 a {
+	display: inline-block;
+	color: black;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	align-items: center; /* center vertically */
+	justify-content: center; /* center horizontally */
+	//width: 5em;
+	//margin-top: 0.5em;
+	//margin-bottom: 0.5em;
+	//margin-top: 0.1em;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	width: 4em;
+}
+
+// IMAGES FOR SCROLL MENU ------------------------------
+div.scrollmenu a img, div.scrollmenu2 a img{
+	display: block; /* This makes the image a block element, so it appears below the link text */
+	margin-top: 0.2em; /* This adds some space between the link text and image */
+	//width: 100%; /* This sets the width of the image to fill the width of the link */
+	//height: auto; /* This sets the height of the image to adjust proportionally */
+	//align-items: center; /* center vertically */
+	//justify-content: center; /* center horizontally */
+	margin-left: auto;
+  	margin-right: auto;
+ 	width: 50%;
+	//margin-top: 0.5em;
+  }
+
+div.scrollmenu a:hover, div.scrollmenu2 a:hover {
+	background-color: #8297b5;
+}
+
+// SCROLL BAR PROPERTIES--------------------------
+::-webkit-scrollbar {
+    height: 0;  /* Remove scrollbar space */
+    background: black;  /* Optional: just make scrollbar invisible */
+}
+
+// WEATHER INFO UNDER THE MAIN ICON------------------
+.weatherInfo p{
+	display: inline-block;
+	//background-color: #ff00b3;
+}
+#temperature{
+	font-size: 2em;
+	margin-right: 0.5rem;
+}
+#dailyTemperature{
+	font-size: 1em;
+	margin-right: 1rem; /* adjust spacing between image and text */
+}
+#weatherType{
+	font-size: 2em;
+}
+.currentConditions h3, .weatherInfo p{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+// FAVOURITES, SEARCH AND SETTINGS BUTTON--------------------
+.footer {
+	margin-top: auto; /* push the text to the bottom */
+	vertical-align: bottom; /* align the text to the bottom */
+	bottom: 0; /* position the text at the bottom */
+	justify-content: flex-end; /* align items to the bottom of the container */
+}
+li.Nav_LinksBottom:hover, li.Nav_LinksBottom:active {
+	background-color: #8297b5;
+}
+
+// DESCRIPTIONS--------------------------------------------
+.Description p{
+	max-width: 18em;
+	margin: 0 auto; /* center the container horizontally */
+	//background-color: #daf0f5;
+}
+.Description{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	//margin-top: auto; /* push the text to the bottom */
+	//align-items: center;
+	background-color: #daf0f5;
+	margin-bottom: 2%;
+}
+#snowflake{
+	max-width: 10%;
+	max-height:auto;
+}
+#removeicon{
+    max-width: 5%;
+    max-height:auto;
+}
+#favouriteLocationli{
+	text-decoration: none;
+	list-style:none;
+	margin-top:1em;
+	padding:0;
+	
+}
+#favouriteLocationli:link, #favouriteLocationli:visited{
+	display: block;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+	padding: 4px;
+	text-decoration: none;
+	list-style: none;
+	// text-transform: uppercase;
+	margin-top: 1px;
+	background-color: #daf0f5;
+	background-image: linear-gradient(#daf0f5, #7398a0 99%);
+	padding-left:0;
+}
+
+#favouriteLocationli:hover{
+	background-image: linear-gradient(#daf0f5, #7398a0 1%);
+}
+
+.favouriteItemsli{
+    text-decoration: none;
+    list-style: none;
+    //padding-top: 100em;
+    margin-top: 1em;
+    padding: 0;
+
+    display: block;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    //padding: 4px;
+    text-decoration: none;
+    list-style: none;
+    // text-transform: uppercase;
+    margin-top: 1px;
+    background-color: #daf0f5;
+    background-image: linear-gradient(#daf0f5, #7398a0 99%);
+    //padding: 1em;
+}
+
+.favouriteItemsli:hover{
+    background-image: linear-gradient(#daf0f5, #7398a0 1%);
+}
+
+.favouriteItemsli ul{
+    list-style: none; /* Removes the bullet point /
+      padding: 0; / Removes any default padding /
+      margin: 0; / Removes any default margin */
+}
+
+
